@@ -37,10 +37,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/contacters/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="26" selection-start="519" selection-end="519" vertical-scroll-proportion="0.53695655">
+            <state line="30" column="21" selection-start="720" selection-end="720" vertical-scroll-proportion="-5.535714">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/contacters/edit.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="17" selection-start="113" selection-end="113" vertical-scroll-proportion="-4.071429">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/contacters/new.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="37" selection-start="75" selection-end="75" vertical-scroll-proportion="-3.392857">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/contacters/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="26" selection-start="37" selection-end="37" vertical-scroll-proportion="-1.3571428">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/contacters/_form.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="47" column="61" selection-start="1287" selection-end="1287" vertical-scroll-proportion="-7.571429">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="66" selection-start="337" selection-end="337" vertical-scroll-proportion="0.53395784">
               <folding />
             </state>
           </provider>
@@ -55,7 +100,11 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/db/migrate/20130130101014_create_contacters.rb" />
+        <option value="$PROJECT_DIR$/app/views/contacters/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/views/contacters/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/contacters/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/contacters/_form.html.erb" />
+        <option value="$PROJECT_DIR$/public/index.html" />
       </list>
     </option>
   </component>
@@ -115,6 +164,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="express" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="express" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="express" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -292,6 +355,13 @@
       <CAPISTRANO_RUN_CONFIG_SETTINGS_ID NAME="CAPISTRANO_TASK_NAME" VALUE="" />
       <CAPISTRANO_RUN_CONFIG_SETTINGS_ID NAME="CAPISTRANO_TASK_ARGS" VALUE="" />
       <CAPISTRANO_RUN_CONFIG_SETTINGS_ID NAME="CAPISTRANO_STAGE" VALUE="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
+      <JSRemoteDebuggerConfigurationSettings>
+        <option name="engineId" />
+        <option name="fileUrl" />
+      </JSRemoteDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="true" type="CucumberRunConfigurationType" factoryName="Cucumber">
@@ -530,9 +600,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/contacters/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="26" selection-start="37" selection-end="37" vertical-scroll-proportion="-1.3571428">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/contacters/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="17" selection-start="113" selection-end="113" vertical-scroll-proportion="-4.071429">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/contacters/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="26" selection-start="519" selection-end="519" vertical-scroll-proportion="0.53695655">
+        <state line="30" column="21" selection-start="720" selection-end="720" vertical-scroll-proportion="-5.535714">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/contacters/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="37" selection-start="75" selection-end="75" vertical-scroll-proportion="-3.392857">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/contacters/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="61" selection-start="1287" selection-end="1287" vertical-scroll-proportion="-7.571429">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="66" selection-start="337" selection-end="337" vertical-scroll-proportion="0.53395784">
           <folding />
         </state>
       </provider>
