@@ -24,11 +24,12 @@ class OrdersController < ApplicationController
   def  insert_sender
     sender = Contacter.find_all_by_id('3')
     @senderTmp = sender
+    print Time.now
   end
   def insert_receiver
     receiver = Contacter.find_all_by_id('2')
     @receiverTmp = receiver
-    redirect_to('index')
+
   end
 
   # GET /orders/1
