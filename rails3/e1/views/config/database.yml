@@ -1,6 +1,0 @@
-development:
-  adapter: mysql
-  database: views_development
-  host: localhost
-  username: 
-  password: 

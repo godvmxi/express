@@ -1,7 +1,0 @@
-development:
-  adapter: mysql
-  database: railsdb
-  username: root
-  password:
-  host: localhost
-
