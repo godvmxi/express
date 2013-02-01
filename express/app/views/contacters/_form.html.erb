@@ -1,0 +1,53 @@
+<%= form_for(@contacter) do |f| %>
+  <% if @contacter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contacter.errors.count, "error") %> prohibited this contacter from being saved:</h2>
+
+      <ul>
+      <% @contacter.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :contacterName %><br />
+    <%= f.text_field :contacterName %>
+  </div>
+  <div class="field">
+    <%= f.label :addressRegion %><br />
+    <%= f.text_field :addressRegion %>
+  </div>
+  <div class="field">
+    <%= f.label :detailedAddress %><br />
+    <%= f.text_field :detailedAddress %>
+  </div>
+  <div class="field">
+    <%= f.label :company %><br />
+    <%= f.text_field :company %>
+  </div>
+  <div class="field">
+    <%= f.label :contactNum %><br />
+    <%= f.text_field :contactNum %>
+  </div>
+  <div class="field">
+    <%= f.label :cellphoneNum %><br />
+    <%= f.text_field :cellphoneNum %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :postalCode %><br />
+    <%= f.number_field :postalCode %>
+  </div>
+  <div class="field">
+    <%= f.label :validFlag %><br />
+    <%= f.number_field :validFlag %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

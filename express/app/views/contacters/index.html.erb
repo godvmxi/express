@@ -1,0 +1,39 @@
+<h1>Listing contacters</h1>
+
+<table>
+  <tr>
+    <th>Contactername</th>
+    <th>Addressregion</th>
+    <th>Detailedaddress</th>
+    <th>Company</th>
+    <th>Contactnum</th>
+    <th>Cellphonenum</th>
+    <th>Email</th>
+    <th>Postalcode</th>
+    <th>Validflag</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @contacters.each do |contacter| %>
+  <tr>
+    <td><%= contacter.contacterName %></td>
+    <td><%= contacter.addressRegion %></td>
+    <td><%= contacter.detailedAddress %></td>
+    <td><%= contacter.company %></td>
+    <td><%= contacter.contactNum %></td>
+    <td><%= contacter.cellphoneNum %></td>
+    <td><%= contacter.email %></td>
+    <td><%= contacter.postalCode %></td>
+    <td><%= contacter.validFlag %></td>
+    <td><%= link_to 'Show', contacter %></td>
+    <td><%= link_to 'Edit', edit_contacter_path(contacter) %></td>
+    <td><%= link_to 'Destroy', contacter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Contacter', new_contacter_path %>

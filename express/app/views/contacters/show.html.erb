@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Contactername:</b>
+  <%= @contacter.contacterName %>
+</p>
+
+<p>
+  <b>Addressregion:</b>
+  <%= @contacter.addressRegion %>
+</p>
+
+<p>
+  <b>Detailedaddress:</b>
+  <%= @contacter.detailedAddress %>
+</p>
+
+<p>
+  <b>Company:</b>
+  <%= @contacter.company %>
+</p>
+
+<p>
+  <b>Contactnum:</b>
+  <%= @contacter.contactNum %>
+</p>
+
+<p>
+  <b>Cellphonenum:</b>
+  <%= @contacter.cellphoneNum %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @contacter.email %>
+</p>
+
+<p>
+  <b>Postalcode:</b>
+  <%= @contacter.postalCode %>
+</p>
+
+<p>
+  <b>Validflag:</b>
+  <%= @contacter.validFlag %>
+</p>
+
+
+<%= link_to 'Edit', edit_contacter_path(@contacter) %> |
+<%= link_to 'Back', contacters_path %>
