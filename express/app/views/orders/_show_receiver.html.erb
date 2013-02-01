@@ -1,0 +1,41 @@
+<%= form_for(@receiverTmp) do |f| %>
+
+    <div class="field">
+      <%= f.label '姓名' %> <%= f.text_field :contacterName %>
+    </div>
+    <div class="field">
+      <%= f.label '地区' %>
+      <%= f.text_field :addressRegion %>
+    </div>
+    <div class="field">
+      <%= f.label '地址' %>
+      <%= f.text_field :detailedAddress %>
+    </div>
+    <div class="field">
+      <%= f.label :company %>
+      <%= f.text_field :company %>
+    </div>
+    <div class="field">
+      <%= f.label :contactNum %>
+      <%= f.text_field :contactNum %>
+    </div>
+    <div class="field">
+      <%= f.label :cellphoneNum %>
+      <%= f.text_field :cellphoneNum %>
+    </div>
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+    <div class="field">
+      <%= f.label :postalCode %>
+      <%= f.number_field :postalCode %>
+    </div>
+    <div class="field">
+      <%= f.label :validFlag %>
+      <%= f.number_field :validFlag %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

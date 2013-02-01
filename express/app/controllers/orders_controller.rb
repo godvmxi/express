@@ -1,8 +1,19 @@
 class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
+ # attr_reader :sender , :receiver
+  cattr_accessor :receiver,:sender
+
+  def initialize
+
+  end
   def index
     @orders = Order.all
+
+    sender = Contacter.find_all_by_contacterName('dan')
+    receiver = Contacter.find_all_by_contacterName('tom')
+    @senderTmp = sender
+    @receiverTmp = receiver
 
     respond_to do |format|
       format.html # index.html.erb
@@ -25,6 +36,9 @@ class OrdersController < ApplicationController
   # GET /orders/new.json
   def new
     @order = Order.new
+
+    print sender
+
 
     respond_to do |format|
       format.html # new.html.erb
