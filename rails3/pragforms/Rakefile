@@ -1,0 +1,54 @@
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+
+require(File.join(File.dirname(__FILE__), 'config', 'boot'))
+
+require 'rake'
+require 'rake/testtask'
+require 'rake/rdoctask'
+
+require 'tasks/rails'
+
+namespace :prag do
+  desc "Create some Sample Users"
+  task :create_users => :environment do
+    fnames = ['guido', 'matz', 'larry', 'anders', 'guy', 'bjarne', 'james', 'brendan']
+    lnames = ['von rossum', 'wall', 'hejlsberg', 'yukihiro', 'steele', 'stroustrup', 'gosling', 'eich']
+    langs = ['Ruby', 'Python', 'Lisp', 'C#', 'Scheme', 'Perl', 'C++', 'Java']
+    accolades = ['Psychic of the Year',
+                 'Jolt Award',
+                 'Darwin Award',
+                 'Pulitzer Prize',
+                 'Pullet Surprise',
+                 'Nobel Peace Prize',
+                 'Hug From Mom']
+    todos = ['Solve NP-Complete problem',
+             'Clean sock drawer',
+             'Paint a self-portrait',
+             'Win NBA championship',
+             'Build a house',
+             'Compose a Symphony',
+             'Climb Baldwin Auditorium',
+             'Drink 3 Margaritas',
+             'Find Waldo',
+             'Run a marathon',
+             'Read the Hugo Award Winners',
+             'Take company public']
+    User.destroy_all
+    Accolade.destroy_all
+    Todo.destroy_all
+    100.times do
+      u = User.create(:username=>"#{fnames[rand(fnames.size)]} #{lnames[rand(lnames.size)]}",
+                      :favorite_language=>langs[rand(langs.size)])
+      2.times do                
+        u.accolades.create(:name=>accolades[rand(accolades.size)],
+                           :received=>rand(15).years.ago.to_date)
+      end
+      4.times do
+        u.todos.create(:name=>todos[rand(todos.size)],
+                       :completed=>rand(2)==0 ? nil : rand(15).days.ago)
+      end
+    end
+  end
+end
+  

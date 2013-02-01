@@ -5,20 +5,30 @@ class OrdersController < ApplicationController
   cattr_accessor :receiver,:sender
 
   def initialize
-
+    receiver = Contacter.find_all_by_id('3')
+    sender = Contacter.find_all_by_id('3')
   end
   def index
     @orders = Order.all
 
-    sender = Contacter.find_all_by_contacterName('dan')
-    receiver = Contacter.find_all_by_contacterName('tom')
+    sender = Contacter.find_all_by_id('3')
     @senderTmp = sender
+    receiver = Contacter.find_all_by_id('2')
     @receiverTmp = receiver
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @orders }
     end
+  end
+  def  insert_sender
+    sender = Contacter.find_all_by_id('3')
+    @senderTmp = sender
+  end
+  def insert_receiver
+    receiver = Contacter.find_all_by_id('2')
+    @receiverTmp = receiver
+    redirect_to('index')
   end
 
   # GET /orders/1
@@ -36,9 +46,17 @@ class OrdersController < ApplicationController
   # GET /orders/new.json
   def new
     @order = Order.new
+    @contacters = Contacter.all
 
-    print sender
+    if sender.nil?
+      sender = Contacter.find_all_by_id('1')
+    end
+    if receiver.nil?
+      receiver = Contacter.find_all_by_id('2')
+    end
 
+    @senderTmp = sender
+    @receiverTmp = receiver
 
     respond_to do |format|
       format.html # new.html.erb

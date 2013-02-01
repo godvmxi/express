@@ -1,0 +1,22 @@
+<!--
+ ! Excerpted from "Agile Web Development with Rails, 3rd Ed.",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/rails3 for more book information.
+-->
+<h3>Pragmatic Order Shipped</h3>
+
+<p>
+  This is just to let you know that we've
+  shipped your recent order:
+</p>
+
+<table>
+ <tr><th>Qty</th><th></th><th>Description</th></tr>
+
+<%= render(:partial => "./html_line_item", :collection => @order.line_items) %>
+ 
+</table>
+

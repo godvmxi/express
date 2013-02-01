@@ -1,0 +1,10 @@
+<h2>Your Pragmatic Cart</h2>
+<ul>
+  <% for item in @cart.items %>
+    <li><%= item.quantity %> &times; <%=h item.title %></li>
+  <% end %>
+</ul>
+
+<!-- START_HIGHLIGHT -->
+<%= button_to 'Empty cart', :action => 'empty_cart' %>
+<!-- END_HIGHLIGHT -->

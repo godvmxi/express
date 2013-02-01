@@ -1,0 +1,37 @@
+<style>
+.hover {
+  background-color: #888888;
+}
+#pending_todos ul li, #completed_todos ul li {
+  list-style: none;
+}
+#pending_todos, #completed_todos {
+  border: 1px solid gray;
+}
+</style>
+<h1>Todo list for <%= @user.username %></h1>
+<!-- User database id is <%= @user.id %> -->
+
+<h2>Pending</h2>
+<div id="pending_todos">
+  <%= render :partial=>"pending_todos" %>
+</div>
+
+<h2>Completed</h2>
+<div id="completed_todos">
+  <%= render :partial=>"completed_todos" %>
+</div>
+
+<%= drop_receiving_element('pending_todos', :accept=>'completed_todo', 
+      :complete=>"$('spinner').hide();",
+      :before=>"$('spinner').show();",
+      :hoverclass=>'hover',
+      :with=>"'todo=' + encodeURIComponent(element.id.split('_').last())",
+      :url=>{:action=>:todo_pending, :id=>@user})%>
+<%= drop_receiving_element('completed_todos', :accept=>'pending_todo', 
+      :complete=>"$('spinner').hide();",
+      :before=>"$('spinner').show();",
+      :hoverclass=>'hover',
+      :with=>"'todo=' + encodeURIComponent(element.id.split('_').last())",
+      :url=>{:action=>:todo_completed, :id=>@user})%>
+<%= sortable_element('pending_todo_list', :url=>{:action=>:sort_pending_todos, :id=>@user, :only_path=>false})%>

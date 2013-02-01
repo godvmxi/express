@@ -1,0 +1,44 @@
+<!--
+ ! Excerpted from "Agile Web Development with Rails, 3rd Ed.",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/rails3 for more book information.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<script type='text/javascript' src='/javascripts/prototype.js'></script>
+
+<div id="chart">
+  <svg xmlns="http://www.w3.org/2000/svg"
+       xmlns:xlink="http://www.w3.org/1999/xlink"
+       version="1.1" baseProfile="full">
+    <g fill-opacity="0.7" stroke="black" stroke-width="0.1cm">
+      <rect id="yaxis" x="0" y="0" width="1" height="300" 
+            fill="black"/>
+      <rect id="xaxis" x="0" y="300" width="300" height="1" 
+            fill="black"/>
+      <rect id="dem" x="10" y="10" width="20" height="0" 
+            fill="blue" stroke="blue"/>
+      <rect id="rep" x="40" y="10" width="20" height="0" 
+            fill="red" stroke="red"/>
+      <rect id="ind" x="70" y="10" width="20" height="0" 
+            fill="green" stroke="green"/>
+    </g>
+  </svg> 
+</div>
+
+<script  type="text/javascript">
+function setBarPercent(elem, percent) {
+  elem = $(elem);
+  elem.setAttribute('height', 300*percent);
+  elem.setAttribute('y', 300-(300*percent));
+}
+function updateChart(dem,rep,ind) {
+  setBarPercent('dem', dem);
+  setBarPercent('rep', rep);
+  setBarPercent('ind', ind);
+}
+updateChart(.46,.44,.08);
+</script>
+</html>

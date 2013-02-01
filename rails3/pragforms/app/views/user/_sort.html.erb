@@ -1,0 +1,26 @@
+<table>
+  <tr>
+    <th class='sortSelector'>Username</th>
+    <th class='sortSelector'>Favorite Language</th>
+    <script type="text/javascript">
+    new SortSelector({form: 'filter_form'})    
+    </script>
+  </tr>
+  
+<% for user in @users %>
+  <tr>
+    <td><%=h user.username %></td>
+    <td><%=h user.favorite_language %></td>
+    <td><%= link_to 'Show', :action => 'show', :id => user %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => user %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => user }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @user.previous_page } if @user.previous_page %>
+<%= link_to 'Next page', { :page => @user.next_page } if @user.next_page %> 
+
+<br />
+
+<%= link_to 'New user', :action => 'new' %>

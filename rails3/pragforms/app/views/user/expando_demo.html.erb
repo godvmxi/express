@@ -1,0 +1,12 @@
+<h1><%= h @user.username %></h1>
+<% for column in User.user_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @user.send(column.name) %>
+</p>
+<% end %>
+<%= link_to 'Edit', :action => 'edit', :id => @user %> |
+<%= link_to 'Back', :action => 'list' %>
+<hr/>
+<div id="accoladeHolder">
+<%= render :partial=>'accolades' %>
+</div id="accoladeHolder">

@@ -1,0 +1,16 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+unshipped_order:
+  id: 1
+  name: leon breedt
+  email: bitserf@gmail.com
+  address: auckland, new zealand
+  pay_type: cc
+
+shipped_order:
+  id: 2
+  name: leon breedt
+  email: bitserf@gmail.com
+  address: auckland, new zealand
+  shipped_at: "2004-12-01 00:00:23"
+  pay_type: check

@@ -1,0 +1,10 @@
+.hover {
+  background-color: #888888;
+}
+#pending_todos ul li, #completed_todos ul li {
+  list-style: none;
+}
+#pending_todos, #completed_todos {
+  border: 1px solid gray;
+}
+

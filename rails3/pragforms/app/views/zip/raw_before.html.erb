@@ -1,0 +1,9 @@
+<h1>Lookup zip</h1>
+
+<% form_tag :action => 'lookup', :id => @zip do %>
+  <p><label for="zip_zip">Zip</label><br/>
+  <%= text_field 'zip', 'zip'  %></p>
+  <%= submit_tag 'Lookup' %>
+<% end %>
+
+<%= link_to 'List', :action => 'list' %>

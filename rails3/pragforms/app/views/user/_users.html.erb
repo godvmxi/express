@@ -1,0 +1,16 @@
+<table class="scaffold">
+  <tr>
+    <th>Name</th>
+    <th>Favorite Language</th>
+  </tr>
+  
+<% for user in @users %>
+  <tr>
+    <td><%=h user.username %></td>
+    <td><%=h user.favorite_language %></td>
+    <td><%= link_to_function 'Show', "open_show(#{user.id})" %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => user %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => user }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>

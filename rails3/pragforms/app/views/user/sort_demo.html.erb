@@ -1,0 +1,18 @@
+<%= javascript_include_tag 'sort_selector' %>
+<% form_tag('javascript:void(0)', 
+                   {:method=> 'filter', :id=>'filter_form'}) do %>
+  <div class="fake-h1">Listing users
+  <%= text_field_tag 'search', @search %>
+  <%= hidden_field_tag 'form_sort' %>
+  <%= observe_form :filter_form,
+                   :frequency => 0.5,
+                   :update => 'ajaxWrapper',
+                   :complete=>"Element.hide('spinner')",
+                   :before=>"Element.show('spinner')",
+                   :url=>{:action=>'sort', :only_path => false} %>
+  </div>
+<% end %>
+<div id='ajaxWrapper'>
+<%= render :partial=>'sort' %>  
+</div>
+

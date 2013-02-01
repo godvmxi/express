@@ -1,0 +1,30 @@
+<!--
+ ! Excerpted from "Agile Web Development with Rails, 3rd Ed.",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/rails3 for more book information.
+-->
+<% @page_title = "Add a User" -%>
+<%= error_messages_for 'user' %>
+
+<%= form_tag do %>
+
+<table>
+  <tr>
+    <td>User name:</td>
+    <td><%= text_field("user", "name") %></td>
+  </tr>
+  <tr>
+    <td>Password:</td>
+    <td><%= password_field("user", "password") %></td>
+  </tr>
+
+  <tr>
+    <td></td>
+    <td><input type="submit" value=" ADD USER " /></td>
+  </tr>
+</table>
+
+<% end %>

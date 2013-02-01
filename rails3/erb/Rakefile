@@ -1,0 +1,11 @@
+require 'time_ext.rb'
+require 'erb'
+
+task :default do
+  for source in Dir['*.rhtml'] do
+    op = File.basename(source, '.rhtml') + ".op"
+    content = File.read(source).sub(/<!--.*?-->/, '')
+    body = ERB.new(content, nil, '-').result
+    File.open(op, "w") {|f| f.write body}
+  end
+end

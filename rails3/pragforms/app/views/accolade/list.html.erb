@@ -1,0 +1,27 @@
+<h1>Listing accolades</h1>
+
+<table>
+  <tr>
+  <% for column in Accolade.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for accolade in @accolades %>
+  <tr>
+  <% for column in Accolade.content_columns %>
+    <td><%=h accolade.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => accolade %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => accolade %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => accolade }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @accolade.previous_page } if @accolade.previous_page %>
+<%= link_to 'Next page', { :page => @accolade.next_page } if @accolade.next_page %> 
+
+<br />
+
+<%= link_to 'New accolade', :action => 'new' %>

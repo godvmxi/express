@@ -1,0 +1,34 @@
+<%= javascript_include_tag "window" %>
+<%= stylesheet_link_tag 'theme1' %>
+<%= stylesheet_link_tag 'default' %>
+<script type="text/javascript">
+ Event.observe(window, 'load', function() {
+	var close_observer = {
+		onDestroy: function(eventName, win) {
+			new Ajax.Updater('users', '/user/refresh_list');
+		}
+	}
+
+	Windows.addObserver(close_observer);
+});
+
+
+	function open_show(user) {
+		win2 = new Window('show_win_' + user, {className: "theme1", title: "Show User", top:0, left:0, width:500, height:300, top:200, left: 200, zIndex:150, opacity:1, resizable: true, url: "<%= url_for(:action => 'show_demo') %>/" + user})
+	    win2.setDestroyOnClose();
+	    win2.show();
+	}	
+	
+
+</script>
+
+<h1>Listing users</h1>
+<div id="users">
+<%= render(:partial => 'users')%>
+</div>
+<%= link_to 'Previous page', { :page => @user.previous_page } if @user.previous_page %>
+<%= link_to 'Next page', { :page => @user.next_page } if @user.next_page %> 
+
+<br />
+
+<%= link_to 'New user', :action => 'new' %>

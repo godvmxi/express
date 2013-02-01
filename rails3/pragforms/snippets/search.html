@@ -1,0 +1,23 @@
+<!--
+ ! Excerpted from "Agile Web Development with Rails, 3rd Ed.",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/rails3 for more book information.
+-->
+<input id="search" name="search" type="text" value="" />
+<script type="text/javascript">
+//<![CDATA[
+new Form.Element.Observer('search', 0.5, function(element, value) {
+  Element.show('spinner'); 
+  new Ajax.Updater('ajaxWrapper', 
+      'http://localhost:3010/user/search', {
+    onComplete:function(request){
+      Element.hide('spinner');
+    }, 
+    parameters:'search=' + encodeURIComponent(value)
+  })
+})
+//]]>
+</script>

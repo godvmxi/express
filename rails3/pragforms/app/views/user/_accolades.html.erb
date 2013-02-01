@@ -1,0 +1,41 @@
+<h1>Accolades for <%= @user.username %></h1>
+
+<table>
+  <tr>
+  <% for column in Accolade.user_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for accolade in @accolades %>
+  <tr>
+  <% for column in Accolade.user_columns %>
+    <td><%=h accolade.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Destroy', { :action => 'destroy_accolade', :id => accolade, :only_path=>false }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+
+<div class="add_accolade" style="display:none;">
+<h1>Add accolade</h1>
+<% form_remote_tag :url=> {:action => 'add_accolade', :only_path=>false},
+                    :update=> 'accoladeHolder' do %>
+<%= error_messages_for 'accolade' %>
+  <%= hidden_field 'user', 'id' %>
+  <p><label for="accolade_name">Name</label><br/>
+  <%= text_field 'accolade', 'name', :autocomplete=>"off"  %></p>
+  <p><label for="accolade_received">Received</label><br/>
+  <%= date_select 'accolade', 'received'  %></p>
+  <%= submit_tag "Add" %>
+<% end %>
+</div>
+
+<%= javascript_tag <<-END
+Expander.createExpandersForClass("add_accolade", {
+  expandName: "Add Accolade", 
+  contractName: "Hide Accolade Form"
+});
+END
+%>

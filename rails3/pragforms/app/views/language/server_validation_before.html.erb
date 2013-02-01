@@ -1,0 +1,15 @@
+<h1>New programming language</h1>
+
+<% form_tag({:action => 'create', :only_path=>false},{:id=>'mainform'}) do %>
+  <%= error_messages_for 'language' %>
+  <!--[form:language]-->
+  <p><label for="language_name">Name</label><br/>
+  <%= text_field 'language', 'name'  %></p>
+
+  <p><label for="language_shortest_wiki">Shortest wiki</label><br/>
+  <%= text_field 'language', 'shortest_wiki'  %></p>
+  <!--[eoform:language]-->
+  <%= submit_tag "Create" %>
+<% end %>
+
+<%= link_to 'Back', :action => 'list' %>

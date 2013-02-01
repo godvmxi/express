@@ -1,5 +1,4 @@
 <%= form_for(@receiverTmp) do |f| %>
-
     <div class="field">
       <%= f.label '姓名' %> <%= f.text_field :contacterName %>
     </div>
@@ -12,15 +11,15 @@
       <%= f.text_field :detailedAddress %>
     </div>
     <div class="field">
-      <%= f.label :company %>
+      <%= f.label '公司' %>
       <%= f.text_field :company %>
     </div>
     <div class="field">
-      <%= f.label :contactNum %>
+      <%= f.label '电话' %>
       <%= f.text_field :contactNum %>
     </div>
     <div class="field">
-      <%= f.label :cellphoneNum %>
+      <%= f.label '手机' %>
       <%= f.text_field :cellphoneNum %>
     </div>
     <div class="field">
@@ -28,12 +27,8 @@
       <%= f.text_field :email %>
     </div>
     <div class="field">
-      <%= f.label :postalCode %>
+      <%= f.label '邮编' %>
       <%= f.number_field :postalCode %>
-    </div>
-    <div class="field">
-      <%= f.label :validFlag %>
-      <%= f.number_field :validFlag %>
     </div>
     <div class="actions">
       <%= f.submit %>

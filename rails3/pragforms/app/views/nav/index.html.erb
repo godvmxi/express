@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Pragmatic Forms Samples</title>
+ 
+  </head>
+  <body>
+    <div id="page">
+      <div id="about">
+        <h1>Pragmatic Ajax<br/>Forms Sample Application</h1>
+        This application demonstrates a variety of ways to Ajaxify form input in an application. The links below take you through 
+        a variety of options for doing basic CRUD (create, read, update, delete) operations via Ajax. The entire source for this application is available online at <%= auto_link("http://www.codecite.com/project/download/ajax_labs") %>.
+      </div>
+      <div id="content">
+        <div id="getting-started">
+          <h2>First Steps</h2>
+          <ol>
+            <li>
+              <%= link_to 'Raw Zipcode', :controller=>'zip', :action=>"raw_demo" %> is a simple Zipcode lookup using Raw Ajax (no library or toolkit help).
+            </li>
+            <li>
+              <%= link_to 'Prototype Zipcode', :controller=>'zip', :action=>"prototype_demo" %> simplifies the Zipcode example by using the Prototype library.
+            </li>
+            <li>
+              <%= link_to 'Scriptaculous Zipcode', :controller=>'zip', :action=>"scriptaculous_demo" %> adds graphical effects from Scriptaculous.
+            </li>
+          </ol>
+          <h2>Forms Galore</h2>
+          <ol>
+            <li>
+              <%= link_to 'Basic CRUD', :controller=>'user' %> is a set of basic web forms, with no Ajax help. The other forms below
+              demonstrate Ajax variations on this example.
+            </li>
+            <li>
+              <%= link_to 'Autocomplete', :controller=>'user', :action=>'autocomplete_demo' %> demonstrates auto-completion of a form field
+              based on a server Ajax response.
+            </li>
+            <li>
+              <%= link_to 'In-Place Editing', :controller=>'user', :action=>'inplace_demo' %> demonstrates using an In-Place Editor to edit 
+              content without having to switch between "show" and "edit" modes.
+            </li>
+            <li>
+              <%= link_to 'Searching', :controller=>'user', :action=>'search_demo'%> demonstrates search with dynamic Ajax update.
+            </li>
+            <li>
+              <%= link_to 'Sorting', :controller=>'user', :action=>'sort_demo' %> demonstrates setting sort columns with dynamic Ajax update.
+            </li>
+            <li>
+              <%= link_to 'Expando', :controller=>'user', :action=>'expando_demo' %> demonstrates a form that expands to allow entry
+              of multiple subitems
+            </li>
+            <li>
+              <%= link_to 'Drag and Drop', :controller=>'user', :action=>'drag_demo' %> demonstrates drag and drop.
+            </li>
+            <li>
+              <%= link_to 'Sort', :controller=>'user', :action=>'sort_demo' %> demonstrates sorting.
+            </li>
+            <li>
+              <%= link_to 'Server-side Validation', :controller=>'language', :action=>'server_validation_demo' %> demonstrates as-you-go validation of form input.
+            </li>
+            <li>
+              <%= link_to 'Client-side Validation', :controller=>'language', :action=>'client_validation_demo' %> demonstrates as-you-go validation of form input.
+            </li>
+            <li>
+              <%= link_to 'Prototype Windows', :controller=>'user', :action=>'list_demo' %> demonstrates Prototype Windows.
+            </li>
+          </ol>
+        </div>
+      </div>
+      
+      <div id="footer">&nbsp;</div>
+    </div>
+  </body>
+</html>

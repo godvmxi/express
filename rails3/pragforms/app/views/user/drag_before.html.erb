@@ -1,0 +1,23 @@
+<h1>Todo list for <%= @user.username %></h1>
+<!-- User database id is <%= @user.id %> -->
+
+<h2>Pending</h2>
+<div id="pending_todos">
+  <ul id='pending_todo_list'>
+    <% @pending_todos.each do |item| %>
+      <% domid = "todo_#{item.id}" %>
+      <li id='<%= domid %>'><%= item.name %></li>
+    <% end %> 
+  </ul>
+</div>
+
+<h2>Completed</h2>
+<div id="completed_todos">
+  <ul>
+    <% @completed_todos.each do |item| %>
+      <% domid = "todo_#{item.id}" %>
+      <li id='<%= domid %>'><%= item.name %></li>
+    <% end %>
+  </ul>
+</div>
+

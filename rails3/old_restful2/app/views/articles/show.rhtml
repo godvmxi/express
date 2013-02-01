@@ -1,0 +1,23 @@
+<!--
+ ! Excerpted from "Agile Web Development with Rails, 3rd Ed.",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/rails3 for more book information.
+-->
+<table>
+  <tr><td>Title:</td>   <td><%= h(@article.title) %></td></tr>
+  <tr><td>Summary:</td> <td><%= h(@article.summary) %></td></tr>
+  <tr><td>Content:</td> <td><%= h(@article.content) %></td></tr>
+</table>
+
+<% unless @article.comments.empty? %>
+<ul>
+  <%= render :partial => "/comments/comment", :collection => @article.comments %>
+</ul>
+<% end %>
+
+<%= link_to "Add comment", new_comment_url(@article) %>
+
+<%= link_to "Back", articles_url %>

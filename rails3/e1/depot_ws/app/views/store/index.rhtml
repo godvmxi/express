@@ -1,0 +1,21 @@
+<!--
+ ! Excerpted from "Agile Web Development with Rails, 3rd Ed.",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/rails3 for more book information.
+-->
+<% for product in @products -%>
+    <div class="catalogentry">
+        <img src="<%= product.image_url %>"/>
+        <h3><%= h(product.title) %></h3>
+        <%= product.description %>
+        <span class="catalogprice"><%= fmt_dollars(product.price) %></span>
+        <%= link_to 'Add to Cart',
+                    {:action => 'add_to_cart', :id => product },
+                    :class => 'addtocart' %><br/>
+    </div>
+    <div class="separator">&nbsp;</div>
+<% end %>
+<%= link_to "Show my cart", :action => "display_cart" %>

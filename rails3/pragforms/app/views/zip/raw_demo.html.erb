@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <script type="text/javascript">
+function updateCityState() {
+//  try {
+//   netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
+//  } catch (e) {
+//  }
+  if (xhr.readyState == 4) {
+    document.getElementById('result').innerHTML = xhr.responseText;
+  }
+}
+function lookupZip(value) {
+//  try {
+//   netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
+//  } catch (e) {
+//  }
+  try {
+    xhr = new XMLHttpRequest();
+  } catch (e) {}
+  if (!xhr) {
+    try {
+      xhr = new ActiveXObject('Msxml2.XMLHTTP');
+    } catch (e) {}
+  }
+  if (!xhr) {
+    try {
+      xhr = new ActiveXObject('Microsoft.XMLHTTP');
+    } catch (e) {}
+  }
+  xhr.onreadystatechange = updateCityState;
+  xhr.open("GET", '<%= url_for :action=>"lookup_ajax", :only_path=>false %>'+ "?zip=" + value);
+  xhr.send(null);  
+}
+    </script>
+  </head>
+  <body>
+<h1>Lookup zip</h1>
+
+<% form_tag 'javascript:void(0)' do %>
+  <p><label for="zip_zip">Zip</label><br/>
+  <%= text_field 'zip', 'zip', :onkeyup=>"lookupZip(this.value);", :autocomplete=>"off"  %></p>
+<% end %>
+<div id="result"></div>
+
+<%= link_to 'List', :action => 'list' %>
+  </body>
+</html>

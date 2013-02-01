@@ -1,0 +1,27 @@
+<h1>Listing zips</h1>
+
+<table>
+  <tr>
+  <% for column in Zip.user_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for zip in @zips %>
+  <tr>
+  <% for column in Zip.user_columns %>
+    <td><%=h zip.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => zip %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => zip %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => zip }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @zip.previous_page } if @zip.previous_page %>
+<%= link_to 'Next page', { :page => @zip.next_page } if @zip.next_page %> 
+
+<br />
+
+<%= link_to 'New zip', :action => 'new' %>

@@ -1,0 +1,7 @@
+<ul>
+  <% @completed_todos.each do |item| %>
+    <% domid = "todo_#{item.id}" %>
+    <li class="completed_todo" id='<%= domid %>'><%= item.name %></li>
+    <%= draggable_element(domid, :ghosting=>true, :revert=>true) %>
+  <% end %>
+</ul>

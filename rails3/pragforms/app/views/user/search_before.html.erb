@@ -1,0 +1,8 @@
+<%= form_tag('javascript:void(0)', {:method=> 'filter'}) do %>
+  <div class="fake-h1">Listing users
+  <%= text_field_tag 'search', @search %>
+  </div>
+<% end %>
+<div id='ajaxWrapper'>
+<%= render :partial=>'search' %>  
+</div>

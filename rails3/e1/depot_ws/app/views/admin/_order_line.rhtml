@@ -1,0 +1,28 @@
+<!--
+ ! Excerpted from "Agile Web Development with Rails, 3rd Ed.",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/rails3 for more book information.
+-->
+  <tr valign="top">
+
+    <td class="olnamebox">
+      <div class="olname"><%= h(order_line.name) %></div>
+      <div class="oladdress"><%= h(order_line.address) %></div>
+    </td>
+
+    <td class="olitembox">
+      <% order_line.line_items.each do |li| %>
+        <div class="olitem">
+          <span class="olitemqty"><%=  li.quantity %></span>
+	  <span class="olitemtitle"><%= li.product.title %></span>
+        </div>
+      <% end %>
+    </td>
+
+    <td>
+      <%= check_box("to_be_shipped", order_line.id, {}, "yes", "no") %>
+    </td>
+  </tr>

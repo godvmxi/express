@@ -1,0 +1,48 @@
+<%= javascript_include_tag 'input_validator' %>
+
+<h1>New programming language</h1>
+
+<% form_tag({:action => 'create'},{:id=>'mainform'}) do %>
+  <%= error_messages_for 'language' %>
+  <!--[form:language]-->
+  <p><label for="language_name">Name</label><br/>
+  <%= text_field 'language', 'name'  %></p>
+
+  <p><label for="language_shortest_wiki">Shortest wiki</label><br/>
+  <%= text_field 'language', 'shortest_wiki'  %></p>
+  <!--[eoform:language]-->
+  <%= submit_tag "Create" %>
+<% end %>
+
+<%= javascript_tag <<-END
+//codecite local validation
+new InputValidator({
+  form: 'mainform',
+  validatorForElement: function(e) {
+    var name = e.name.match(/\\[(.*)\\]/);
+    if (name) {name = name[1]}
+    switch(name) {
+      case "name":
+        return this.cannotBeEmpty(e);
+      case "shortest_wiki":
+        return this.mustBeGreaterThanZero(e);
+    }
+    return false;
+  },
+  cannotBeEmpty: function(e) {
+    return function() {
+      this.reportValidation(e, e.value.length>0 ? "" : "Must be >1 characters")
+    }
+  },
+  mustBeGreaterThanZero: function(e) {
+    return function() {
+      var intVal = parseInt(e.value);
+      this.reportValidation(e, intVal>0 ? "" : "Must be greater than zero");
+    }
+  }
+});
+//codecite local validation
+END
+%>
+
+<%= link_to 'Back', :action => 'list' %>

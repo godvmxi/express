@@ -1,0 +1,19 @@
+<%= javascript_include_tag "jsont" %>
+<%= javascript_include_tag :defaults %>
+<h1>JSONT Demo</h1>
+
+<% form_tag('javascript:void(0)') do %>
+JSON  <textarea cols='40' rows='20' id='json'></textarea>
+Transform  <textarea cols='40' rows='20' id='transform'></textarea>
+<br/>
+Result  <textarea cols='40' rows='20' id='result'></textarea>
+<br/>
+  <input id="go" type="submit" value="Transform" />
+<% end %>
+
+<script type="text/javascript">
+Event.observe("go", "click", function() {
+  $("result").value = "";
+  $("result").value = jsonT(eval("("+$("json").value+")"), eval("("+$("transform").value+")"));
+})
+</script>

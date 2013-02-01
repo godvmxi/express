@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <%= javascript_include_tag 'prototype' %>
+    <%= javascript_include_tag 'cross_site' %>
+    <script type="text/javascript">
+function lookupZip(element, value) {
+  new Ajax.Updater("result", 
+                   '<%= url_for :action=>"lookup_ajax", :only_path=>false %>', {
+    parameters: "zip="+encodeURIComponent(value),
+    method: "get"
+  });
+}
+    </script>
+  </head>
+  <body>
+<h1>Lookup zip</h1>
+
+<%= link_to 'Browse Zipipedia', :action => 'list' %>
+<% form_tag 'javascript:void(0)' do %>
+  <p><label for="zip_zip">Zip</label><br/>
+  <%= text_field 'zip', 'zip', :autocomplete=>"off"  %></p>
+<script type="text/javascript">
+  new Form.Element.Observer('zip_zip', 0.5, lookupZip);
+</script>  
+<% end %>
+<div id="result"></div>
+
+  </body>
+</html>

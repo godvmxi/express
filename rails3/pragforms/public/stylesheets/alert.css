@@ -1,0 +1,114 @@
+.overlay_alert img { border: none; }
+.overlay_alert { background-image: url('../themes/alert/overlay.png'); }
+
+/* For PNG transparence in IE !! */
+* html .overlay_alert {
+	background-color: transparent;
+	back\ground-color: transparent;
+	background-image: none;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../themes/alert/overlay.png", sizingMethod="scale");
+}
+
+.alert_nw {
+	width: 5px;
+	height: 5px;
+	background: transparent url(alert/top_left.gif) no-repeat bottom left;			
+}
+
+.alert_n {
+	height: 5px;
+	width: 100%;
+	background: transparent url(alert/top.gif) repeat-x bottom left;			
+}
+
+.alert_ne {
+	width: 5px;
+	height: 5px;
+	background: transparent url(alert/top_right.gif) no-repeat bottom left			
+}
+
+.alert_e {
+	width: 5px;
+	height: 100%;
+	background: transparent url(alert/right.gif) repeat-y 0 0;			
+}
+
+.alert_w {
+	width: 5px;
+	height: 100%;
+	background: transparent url(alert/left.gif) repeat-y 0 0;			
+}
+
+.alert_sw {
+	width: 5px;
+	height: 5px;
+	background: transparent url(alert/bottom_left.gif) no-repeat 0 0;			
+}
+
+.alert_s {
+	height: 5px;
+	width: 100%;
+	background: transparent url(alert/bottom.gif) repeat-x 0 0;			
+}
+
+.alert_se {
+	width: 5px;
+	height: 5px;
+	background: transparent url(alert/bottom_right.gif) no-repeat 0 0;			
+}
+
+.alert_sizer {
+	width:0px;
+	height:0px;
+	display:none;
+}
+
+.alert_close {
+	width:0px;
+	height:0px;
+	display:none;
+}
+
+.alert_title {
+	width:0px;
+	height:0px;
+	display:none;
+}
+
+.alert_content {
+	overflow:auto;
+	color: #000;
+	font-family: Tahoma, Arial, Sans Serif;
+	font-size: 10px;
+	background: #FFF;
+}
+
+
+/* For alert/confirm dialog */
+.alert_window {
+	border:1px solid #F00;	
+	background: #FFF;
+	padding:20px;
+	margin-left:auto;
+	margin-right:auto;
+	width:400px;
+}
+
+.alert_message {
+	font-size:16px;
+	text-align:center;
+	width:100%;
+	color:#F00;
+	padding-bottom:10px;
+}
+
+.alert_buttons {
+	text-align:center;
+	width:100%;
+}
+
+.alert_buttons input {
+	width:20%;
+	margin:10px;
+}
+

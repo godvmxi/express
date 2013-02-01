@@ -1,0 +1,22 @@
+<html>
+<head>
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag "cross_site" %>
+</head>
+<body>
+<%= image_tag 'loading.gif', :id=>'spinner', :style=>"display:none; float:right;" %>
+<h1>Adding Timeouts With Prototype</h1>
+
+This <%= link_to_remote 'link', 
+                        :url=>{:action=>"slow", :only_path=>false},
+                        :before=>"$('result').innerHTML='&nbsp;'",
+                         :update=>{:success=>"result"} %> 
+invokes an Ajax function that will delay for a long time before returning.
+
+<br/>
+<br/>
+Result:
+<br/>
+<div id="result" style="border: 1px solid;">&nbsp;</div>
+</body>
+</html>

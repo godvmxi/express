@@ -1,0 +1,49 @@
+<!--
+ ! Excerpted from "Agile Web Development with Rails, 3rd Ed.",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material, 
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/rails3 for more book information.
+-->
+From <a href="http://annevankesteren.nl">Anne van Kesteren</a>. Original 
+<a href="http://annevankesteren.nl/test/html/canvas/demo/002.html">here</a>, 
+along with lots of other good stuff.
+<p>Speed:</p>
+<canvas width="300" height="300">Your browser does not support canvas.</canvas>
+<script>
+ function drawStuff() {
+  var phi = 1.61803399;
+  var canvas = document.getElementsByTagName("canvas")[0];
+  if(canvas.getContext){
+   var ctx = canvas.getContext("2d"); 
+   ctx.save();
+   ctx.translate(canvas.width / 2.0, canvas.height / 2.0);
+   var i = 0;
+   var then = new Date();
+   for (var i = 0; i < 300; i++){
+    var theta = (i * phi * Math.PI * 0.05);
+    var r = 0.4 * i;
+    var xc = r * Math.cos(theta);
+    var yc = r * Math.sin(theta);
+    var rho = (i / 150.0) * Math.PI;
+    var alpha = (i + 50) / 700;
+    var red = Math.floor(192.0 + (63.0 * Math.sin(rho)));
+    var green = Math.floor(192.0 + (63.0 * Math.cos(rho)));
+    var blue = Math.floor(Math.sqrt(red));
+    ctx.beginPath();
+    ctx.fillStyle = "rgba(" + red + ", " + green + ", " + blue + ", " + (1.0 - alpha) + ")";
+    ctx.arc(xc, yc, alpha * 40.0, 0, 2 * Math.PI, 0);
+    ctx.fill();
+    ctx.arc(xc, yc, alpha * 40.0, 0, 2 * Math.PI, 0);
+    ctx.strokeStyle = "rgba(0, 0, 0, " + alpha + ")";
+    ctx.stroke();
+    ctx.closePath();
+   }
+   var now = new Date();
+   document.getElementsByTagName('p')[0].textContent += " "+(now-then)+"ms";
+   ctx.restore();
+  }
+ }
+ drawStuff();
+</script>
