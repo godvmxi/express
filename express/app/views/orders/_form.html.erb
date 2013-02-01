@@ -1,0 +1,105 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :orderDispNum %><br />
+    <%= f.text_field :orderDispNum %>
+  </div>
+  <div class="field">
+    <%= f.label :orderState %><br />
+    <%= f.number_field :orderState %>
+  </div>
+  <div class="field">
+    <%= f.label :expressNum %><br />
+    <%= f.text_field :expressNum %>
+  </div>
+  <div class="field">
+    <%= f.label :senderID %><br />
+    <%= f.number_field :senderID %>
+  </div>
+  <div class="field">
+    <%= f.label :receiverID %><br />
+    <%= f.number_field :receiverID %>
+  </div>
+  <div class="field">
+    <%= f.label :orderDate %><br />
+    <%= f.datetime_select :orderDate %>
+  </div>
+  <div class="field">
+    <%= f.label :orderContent %><br />
+    <%= f.text_field :orderContent %>
+  </div>
+  <div class="field">
+    <%= f.label :posterID %><br />
+    <%= f.number_field :posterID %>
+  </div>
+  <div class="field">
+    <%= f.label :estimateTermDate %><br />
+    <%= f.datetime_select :estimateTermDate %>
+  </div>
+  <div class="field">
+    <%= f.label :servicePoints %><br />
+    <%= f.text_field :servicePoints %>
+  </div>
+  <div class="field">
+    <%= f.label :serviceSuggest %><br />
+    <%= f.text_field :serviceSuggest %>
+  </div>
+  <div class="field">
+    <%= f.label :serviceProcess %><br />
+    <%= f.text_field :serviceProcess %>
+  </div>
+  <div class="field">
+    <%= f.label :expressProvider %><br />
+    <%= f.number_field :expressProvider %>
+  </div>
+  <div class="field">
+    <%= f.label :shipmentType %><br />
+    <%= f.number_field :shipmentType %>
+  </div>
+  <div class="field">
+    <%= f.label :specialHandling %><br />
+    <%= f.text_field :specialHandling %>
+  </div>
+  <div class="field">
+    <%= f.label :paymentType %><br />
+    <%= f.number_field :paymentType %>
+  </div>
+  <div class="field">
+    <%= f.label :specialOffer %><br />
+    <%= f.text_field :specialOffer %>
+  </div>
+  <div class="field">
+    <%= f.label :userNote %><br />
+    <%= f.text_field :userNote %>
+  </div>
+  <div class="field">
+    <%= f.label :posterNote %><br />
+    <%= f.text_field :posterNote %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br />
+    <%= f.number_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :volume %><br />
+    <%= f.text_field :volume %>
+  </div>
+  <div class="field">
+    <%= f.label :charge %><br />
+    <%= f.number_field :charge %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

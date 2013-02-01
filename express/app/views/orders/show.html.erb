@@ -1,0 +1,115 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Orderdispnum:</b>
+  <%= @order.orderDispNum %>
+</p>
+
+<p>
+  <b>Orderstate:</b>
+  <%= @order.orderState %>
+</p>
+
+<p>
+  <b>Expressnum:</b>
+  <%= @order.expressNum %>
+</p>
+
+<p>
+  <b>Senderid:</b>
+  <%= @order.senderID %>
+</p>
+
+<p>
+  <b>Receiverid:</b>
+  <%= @order.receiverID %>
+</p>
+
+<p>
+  <b>Orderdate:</b>
+  <%= @order.orderDate %>
+</p>
+
+<p>
+  <b>Ordercontent:</b>
+  <%= @order.orderContent %>
+</p>
+
+<p>
+  <b>Posterid:</b>
+  <%= @order.posterID %>
+</p>
+
+<p>
+  <b>Estimatetermdate:</b>
+  <%= @order.estimateTermDate %>
+</p>
+
+<p>
+  <b>Servicepoints:</b>
+  <%= @order.servicePoints %>
+</p>
+
+<p>
+  <b>Servicesuggest:</b>
+  <%= @order.serviceSuggest %>
+</p>
+
+<p>
+  <b>Serviceprocess:</b>
+  <%= @order.serviceProcess %>
+</p>
+
+<p>
+  <b>Expressprovider:</b>
+  <%= @order.expressProvider %>
+</p>
+
+<p>
+  <b>Shipmenttype:</b>
+  <%= @order.shipmentType %>
+</p>
+
+<p>
+  <b>Specialhandling:</b>
+  <%= @order.specialHandling %>
+</p>
+
+<p>
+  <b>Paymenttype:</b>
+  <%= @order.paymentType %>
+</p>
+
+<p>
+  <b>Specialoffer:</b>
+  <%= @order.specialOffer %>
+</p>
+
+<p>
+  <b>Usernote:</b>
+  <%= @order.userNote %>
+</p>
+
+<p>
+  <b>Posternote:</b>
+  <%= @order.posterNote %>
+</p>
+
+<p>
+  <b>Weight:</b>
+  <%= @order.weight %>
+</p>
+
+<p>
+  <b>Volume:</b>
+  <%= @order.volume %>
+</p>
+
+<p>
+  <b>Charge:</b>
+  <%= @order.charge %>
+</p>
+
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

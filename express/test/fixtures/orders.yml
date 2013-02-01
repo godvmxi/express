@@ -1,0 +1,49 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  orderDispNum: MyString
+  orderState: 1
+  expressNum: MyString
+  senderID: 1
+  receiverID: 1
+  orderDate: 2013-02-01 11:15:48
+  orderContent: MyString
+  posterID: 1
+  estimateTermDate: 2013-02-01 11:15:48
+  servicePoints: MyString
+  serviceSuggest: MyString
+  serviceProcess: MyString
+  expressProvider: 1
+  shipmentType: 1
+  specialHandling: MyString
+  paymentType: 1
+  specialOffer: MyString
+  userNote: MyString
+  posterNote: MyString
+  weight: 1
+  volume: MyString
+  charge: 1
+
+two:
+  orderDispNum: MyString
+  orderState: 1
+  expressNum: MyString
+  senderID: 1
+  receiverID: 1
+  orderDate: 2013-02-01 11:15:48
+  orderContent: MyString
+  posterID: 1
+  estimateTermDate: 2013-02-01 11:15:48
+  servicePoints: MyString
+  serviceSuggest: MyString
+  serviceProcess: MyString
+  expressProvider: 1
+  shipmentType: 1
+  specialHandling: MyString
+  paymentType: 1
+  specialOffer: MyString
+  userNote: MyString
+  posterNote: MyString
+  weight: 1
+  volume: MyString
+  charge: 1

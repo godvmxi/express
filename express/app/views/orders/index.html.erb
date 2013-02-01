@@ -1,0 +1,65 @@
+<h1>Listing orders</h1>
+
+<table>
+  <tr>
+    <th>Orderdispnum</th>
+    <th>Orderstate</th>
+    <th>Expressnum</th>
+    <th>Senderid</th>
+    <th>Receiverid</th>
+    <th>Orderdate</th>
+    <th>Ordercontent</th>
+    <th>Posterid</th>
+    <th>Estimatetermdate</th>
+    <th>Servicepoints</th>
+    <th>Servicesuggest</th>
+    <th>Serviceprocess</th>
+    <th>Expressprovider</th>
+    <th>Shipmenttype</th>
+    <th>Specialhandling</th>
+    <th>Paymenttype</th>
+    <th>Specialoffer</th>
+    <th>Usernote</th>
+    <th>Posternote</th>
+    <th>Weight</th>
+    <th>Volume</th>
+    <th>Charge</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @orders.each do |order| %>
+  <tr>
+    <td><%= order.orderDispNum %></td>
+    <td><%= order.orderState %></td>
+    <td><%= order.expressNum %></td>
+    <td><%= order.senderID %></td>
+    <td><%= order.receiverID %></td>
+    <td><%= order.orderDate %></td>
+    <td><%= order.orderContent %></td>
+    <td><%= order.posterID %></td>
+    <td><%= order.estimateTermDate %></td>
+    <td><%= order.servicePoints %></td>
+    <td><%= order.serviceSuggest %></td>
+    <td><%= order.serviceProcess %></td>
+    <td><%= order.expressProvider %></td>
+    <td><%= order.shipmentType %></td>
+    <td><%= order.specialHandling %></td>
+    <td><%= order.paymentType %></td>
+    <td><%= order.specialOffer %></td>
+    <td><%= order.userNote %></td>
+    <td><%= order.posterNote %></td>
+    <td><%= order.weight %></td>
+    <td><%= order.volume %></td>
+    <td><%= order.charge %></td>
+    <td><%= link_to 'Show', order %></td>
+    <td><%= link_to 'Edit', edit_order_path(order) %></td>
+    <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Order', new_order_path %>
