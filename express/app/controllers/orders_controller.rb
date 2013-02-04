@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
     end
   end
   def  insert_sender
-    sender = Contacter.find_all_by_id('3')
+    sender = Contacter.find_all_by_id('2')
     @senderTmp = sender
     print Time.now
   end

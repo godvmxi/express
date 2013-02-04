@@ -1,4 +1,9 @@
 Express::Application.routes.draw do
+  get "ship_order/index"
+
+  post "ship_order/insert_sender"
+  post "ship_order/insert_receiver"
+
   resources :orders
 
 
@@ -61,4 +66,6 @@ Express::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+  match '/ship_order/insert_sender' => "ShipOrder#insert_sender"
+  match '/ship_order/insert_receiver' => "ShipOrder#insert_receiver"
 end

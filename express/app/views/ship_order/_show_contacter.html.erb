@@ -1,6 +1,4 @@
-<%= Time.now %>
-<%= form_for(@senderTmp) do |f| %>
-
+<%= form_for(contact) do |f| %>
 
     <div class="field">
       <%= f.label '姓名' %> <%= f.text_field :contacterName %>
@@ -31,9 +29,9 @@
     </div>
     <div class="field">
       <%= f.label '邮编' %>
-      <%= f.number_field :postalCode %>
+      <%= f.text_field :postalCode %>
     </div>
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit :value => '保存'%>
     </div>
 <% end %>

@@ -24,7 +24,7 @@
         <td><%= contacter.email %></td>
         <td><%= contacter.postalCode %></td>
         <td><%= button_to '插入发件人', :action => "insert_sender",:id => contacter.id  %></td>
-        <td><%= button_to '插入收件人'  %></td>
+        <td><%= button_to '插入收件人' , :action => "insert_receiver",:id => contacter.id %></td>
         <td><%= link_to '编辑', edit_contacter_path(contacter) %></td>
         <td><%= link_to '删除', contacter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
