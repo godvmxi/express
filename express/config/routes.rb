@@ -3,6 +3,7 @@ Express::Application.routes.draw do
 
   post "ship_order/insert_sender"
   post "ship_order/insert_receiver"
+  post "ship_order/create_order"
 
   resources :orders
 
@@ -68,4 +69,5 @@ Express::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
   match '/ship_order/insert_sender' => "ShipOrder#insert_sender"
   match '/ship_order/insert_receiver' => "ShipOrder#insert_receiver"
+  match '/ship_order/create_order' => "ShipOrder#create_order"
 end

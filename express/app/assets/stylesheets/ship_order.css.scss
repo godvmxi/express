@@ -1,3 +1,18 @@
 // Place all the styles related to the ship_order controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#list_contacter{
+
+}
+#show_sender{
+  background: #99FF99;
+  height: 300px;
+  width: 120px;
+  float: left;
+}
+#show_receiver{
+  background: #99FFFF;
+  height: 300px;
+  width: 70%;
+  margin-left: 120px;
+}

@@ -1,0 +1,106 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :'订单号码' %>
+    <%= f.text_field :orderDispNum %>
+  </div>
+  <div class="field">
+    <%= f.label :'订单状态' %>
+    <%= f.text_field :orderState %>
+  </div>
+  <div class="field">
+    <%= f.label :'运单号码' %>
+    <%= f.text_field :expressNum %>
+  </div>
+  <div class="field">
+    <%= f.label :'发送人' %>
+    <%= f.text_field :senderID %>
+  </div>
+  <div class="field">
+    <%= f.label :'收件人' %>
+    <%= f.text_field :receiverID %>
+  </div>
+    <div class="field">
+        <%= f.label :'快递员' %>
+        <%= f.number_field :posterID %>
+    </div>
+  <div class="field">
+    <%= f.label :'下单时间' %>
+    <%= f.datetime_select :orderDate %>
+  </div>
+
+  <div class="field">
+    <%= f.label :'预计时间' %>
+    <%= f.datetime_select :estimateTermDate %>
+  </div>
+  <div class="field">
+    <%= f.label :'服务特点' %>
+    <%= f.text_field :servicePoints %>
+  </div>
+  <div class="field">
+    <%= f.label :'用户反馈' %>
+    <%= f.text_field :serviceSuggest %>
+  </div>
+  <div class="field">
+    <%= f.label :'服务进度' %>
+    <%= f.text_field :serviceProcess %>
+  </div>
+  <div class="field">
+    <%= f.label :'服务商' %>
+    <%= f.number_field :expressProvider %>
+  </div>
+  <div class="field">
+    <%= f.label :'服务类型' %>
+    <%= f.number_field :shipmentType %>
+  </div>
+  <div class="field">
+    <%= f.label :'退件处理' %>
+    <%= f.text_field :specialHandling %>
+  </div>
+  <div class="field">
+    <%= f.label :'支付方式' %>
+    <%= f.number_field :paymentType %>
+  </div>
+  <div class="field">
+    <%= f.label :'特殊服务' %>
+    <%= f.text_field :specialOffer %>
+  </div>
+  <div class="field">
+    <%= f.label :'用户备注' %>
+    <%= f.text_field :userNote %>
+  </div>
+  <div class="field">
+    <%= f.label :'快递员备注' %>
+    <%= f.text_field :posterNote %>
+  </div>
+  <div class="field">
+    <%= f.label :'重量' %>
+    <%= f.number_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :'体积' %>
+    <%= f.text_field :volume %>
+  </div>
+  <div class="field">
+    <%= f.label :'运费' %>
+    <%= f.number_field :charge %>
+  </div>
+    <div class="field">
+      <%= f.label :'快递RAW' %>
+      <%= f.text_field :orderContent %>
+    </div>
+  <div class="actions">
+    <%= f.submit '保存订单测试',:action => 'new',:controller =>  'orders' %>
+  </div>
+<% end %>

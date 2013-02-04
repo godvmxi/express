@@ -1,10 +1,26 @@
 <title>订单生成</title>
-<h1>订单生成</h1>
 
-<%= render 'list_contacters' %>
+<body>
+    <h1>订单生成</h1>
+    <div id="list_contacter">
+        <%= render 'list_contacters' %>
+    </div>
 
-<%= render :partial =>  "show_contacter" , :locals  => {:contact => @sender} %>
-<%= render :partial =>  "show_contacter" , :locals  => {:contact => @receiver} %>
+    <p></p>
+    <div id="show_order">
+      <%= render :partial =>  "show_order"  , :locals  => {:object => @order,:as => :test}  %>
+    </div>
+    <p>发件人</p>
+    <div id="show_sender">
+        <%= render :partial =>  "show_contacter" , :locals  => {:contact => @sender} %>
+    </div>
+    <p>收件人</p>
+    <div id="show_recevier">
+        <%= render :partial =>  "show_contacter" , :locals  => {:contact => @receiver} %>
+    </div>
+    <%= button_to '生成订单',:action => 'create_order' %>
+
+</body>
 
 
 
